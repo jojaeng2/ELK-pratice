@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true" scanPeriod="30 seconds">
+
+  <appender name="STDOUT_INFO" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>[%d{yyyy-MM-dd HH:mm:ss}:%-4relative] %highlight(%-5level) %boldGreen([%C.%M:%yellow(%L)]) - %boldWhite(%msg%n)</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="STDOUT_ERROR" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>[%d{yyyy-MM-dd HH:mm:ss}:%-4relative] %highlight(%-5level) %boldRed([%C.%M:%yellow(%L)]) - %boldWhite(%msg%n)</pattern>
+    </encoder>
+  </appender>
+
+  <root name="info" level="INFO">
+    <appender-ref ref="STDOUT_INFO"/>
+  </root>
+
+  <logger name="error" level="ERROR">
+    <appender-ref ref="STDOUT_ERROR"/>
+  </logger>
+
+<!--  <root level="OFF" />-->
+
+</configuration>
